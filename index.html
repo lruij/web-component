@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component</title>
+  <script src="./btn.js"></script>
+</head>
+<body>
+  <btn-jj id="jj-dom"></btn-jj>
+  <div>不会影响到此 div 节点样式</div>
+
+  <script>
+    let jjdom = document.getElementById("jj-dom");
+    setTimeout(function(){
+      // 2s 后触发 attributeChangedCallback 事件
+      jjdom.setAttribute('style', 'color: red;');
+    }, 2000)
+  </script>
+</body>
+</html>
